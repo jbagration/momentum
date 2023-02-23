@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>momentum</title>
+</head>
+<body >
+  <header class="header">
+
+    <div class="player">
+      <div class="player-controls">
+        <button class="play-prev player-icon"></button>
+        <button class="play player-icon"></button>
+        <button class="play-next player-icon"></button>
+      </div>
+      <div class="playback">
+        <span class="track-name"></span>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+        <span class="current-time"></span>
+        <span class="total-time"></span>
+      </div>
+
+      <div class="volume-control">
+        <button class="volume-button"></button>
+        <input type="range" class="volume-slider" min="0" max="100" value="100">
+      </div>
+
+      <ul class="play-list">
+      </ul>
+
+    </div>
+    
+    <div class="weather">
+      <input type="text" class="city" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-error">Invalid city name. Please enter a valid city.</div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name" placeholder="[Enter name]" />
+    </div>
+  </main>
+  <footer class="footer">
+
+<div>
+
+  <div class="svgButton">
+
+    <button id="settingsBtn" style="display: grid;">
+      <svg id="settingsBtn" class="svg-icon" width="50" height="50" viewBox="0 0 20 20">
+        <path fill="white" d="M10.032,8.367c-1.112,0-2.016,0.905-2.016,2.018c0,1.111,0.904,2.014,2.016,2.014c1.111,0,2.014-0.902,2.014-2.014C12.046,9.271,11.143,8.367,10.032,8.367z M10.032,11.336c-0.525,0-0.953-0.427-0.953-0.951c0-0.526,0.427-0.955,0.953-0.955c0.524,0,0.951,0.429,0.951,0.955C10.982,10.909,10.556,11.336,10.032,11.336z"></path>
+        <path fill="white" d="M17.279,8.257h-0.785c-0.107-0.322-0.237-0.635-0.391-0.938l0.555-0.556c0.208-0.208,0.208-0.544,0-0.751l-2.254-2.257c-0.199-0.2-0.552-0.2-0.752,0l-0.556,0.557c-0.304-0.153-0.617-0.284-0.939-0.392V3.135c0-0.294-0.236-0.532-0.531-0.532H8.435c-0.293,0-0.531,0.237-0.531,0.532v0.784C7.582,4.027,7.269,4.158,6.966,4.311L6.409,3.754c-0.1-0.1-0.234-0.155-0.376-0.155c-0.141,0-0.275,0.055-0.375,0.155L3.403,6.011c-0.208,0.207-0.208,0.543,0,0.751l0.556,0.556C3.804,7.622,3.673,7.935,3.567,8.257H2.782c-0.294,0-0.531,0.238-0.531,0.531v3.19c0,0.295,0.237,0.531,0.531,0.531h0.787c0.105,0.318,0.236,0.631,0.391,0.938l-0.556,0.559c-0.208,0.207-0.208,0.545,0,0.752l2.254,2.254c0.208,0.207,0.544,0.207,0.751,0l0.558-0.559c0.303,0.154,0.616,0.285,0.938,0.391v0.787c0,0.293,0.238,0.531,0.531,0.531h3.191c0.295,0,0.531-0.238,0.531-0.531v-0.787c0.322-0.105,0.636-0.236,0.938-0.391l0.56,0.559c0.208,0.205,0.546,0.207,0.752,0l2.252-2.254c0.208-0.207,0.208-0.545,0.002-0.752l-0.559-0.559c0.153-0.303,0.285-0.615,0.389-0.938h0.789c0.295,0,0.532-0.236,0.532-0.531v-3.19C17.812,8.495,17.574,8.257,17.279,8.257z M16.747,11.447h-0.653c-0.241,0-0.453,0.164-0.514,0.398c-0.129,0.496-0.329,0.977-0.594,1.426c-0.121,0.209-0.089,0.473,0.083,0.645l0.463,0.465l-1.502,1.504l-0.465-0.463c-0.174-0.174-0.438-0.207-0.646-0.082c-0.447,0.262-0.927,0.463-1.427,0.594c-0.234,0.061-0.397,0.271-0.397,0.514V17.1H8.967v-0.652c0-0.242-0.164-0.453-0.397-0.514c-0.5-0.131-0.98-0.332-1.428-0.594c-0.207-0.123-0.472-0.09-0.646,0.082l-0.463,0.463L4.53,14.381l0.461-0.463c0.169-0.172,0.204-0.434,0.083-0.643c-0.266-0.461-0.467-0.939-0.596-1.43c-0.06-0.234-0.272-0.398-0.514-0.398H3.313V9.319h0.652c0.241,0,0.454-0.162,0.514-0.397c0.131-0.498,0.33-0.979,0.595-1.43c0.122-0.208,0.088-0.473-0.083-0.645L4.53,6.386l1.503-1.504l0.46,0.462c0.173,0.172,0.437,0.204,0.646,0.083c0.45-0.265,0.931-0.464,1.433-0.597c0.233-0.062,0.396-0.274,0.396-0.514V3.667h2.128v0.649c0,0.24,0.161,0.452,0.396,0.514c0.502,0.133,0.982,0.333,1.433,0.597c0.211,0.12,0.475,0.089,0.646-0.083l0.459-0.462l1.504,1.504l-0.463,0.463c-0.17,0.171-0.202,0.438-0.081,0.646c0.263,0.448,0.463,0.928,0.594,1.427c0.061,0.235,0.272,0.397,0.514,0.397h0.651V11.447z"></path>
+      </svg>
+      Settings</button>
+    </div>
+
+    <div id="settingsModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Settings</h2>
+        <form>
+          <div>
+            <label for="languageSelect">Language:</label>
+            <select id="languageSelect">
+              <option value="en">English</option>
+              <option value="ru">Русский</option>
+            </select>
+          </div>
+          <div>
+            <label for="imageSourceSelect">Image source:</label>
+            <select id="imageSourceSelect">
+              <option value="github">GitHub Collection</option>
+              <option value="unsplash">Unsplash API</option>
+              <option value="flickr">Flickr API</option>
+            </select>
+          </div>
+          <div>
+      <label for="background-tags">Background Image Tags:</label>
+            <input id="imageTagsInput" type="text" placeholder="nature, city, mountains">
+          </div>
+          <div>
+            <label for="showTimeCheckbox">Show time:</label>
+            <input id="showTimeCheckbox" type="checkbox" checked>
+          </div>
+          <div>
+            <label for="showDateCheckbox">Show date:</label>
+            <input id="showDateCheckbox" type="checkbox" checked>
+          </div>
+          <div>
+            <label for="showGreetingCheckbox">Show greeting:</label>
+            <input id="showGreetingCheckbox" type="checkbox" checked>
+          </div>
+          <div>
+            <label for="showQuoteCheckbox">Show quote:</label>
+            <input id="showQuoteCheckbox" type="checkbox" checked>
+          </div>
+          <div>
+            <label for="showWeatherCheckbox">Show weather:</label>
+            <input id="showWeatherCheckbox" type="checkbox" checked>
+          </div>
+          <div>
+            <label for="showAudioCheckbox">Show audio player:</label>
+            <input id="showAudioCheckbox" type="checkbox" checked>
+          </div>
+          <div>
+            <label for="showTodoCheckbox">Show to-do list:</label>
+            <input id="showTodoCheckbox" type="checkbox" checked>
+          </div>
+          <div>
+            <label for="showLinksCheckbox">Show links list:</label>
+            <input id="showLinksCheckbox" type="checkbox" checked>
+          </div>
+          <div>
+            <button type="submit">Save</button>
+            <button type="button" id="cancelSettingsBtn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>  
+<div class="quotes">
+    <button class="change-quote"></button>
+
+      <div class="quote"></div>
+      <div class="author"></div>
+
+  </div>
+
+  <div>
+    <div class="svgButton" >
+
+  <button id="open-todo-modal" class="todo" style="display: grid;">
+    <svg id="open-todo-modal" class="svg-icon" width="50" height="50" viewBox="0 0 20 20">
+      <path fill="white" d="M9.634,10.633c0.116,0.113,0.265,0.168,0.414,0.168c0.153,0,0.308-0.06,0.422-0.177l4.015-4.111c0.229-0.235,0.225-0.608-0.009-0.836c-0.232-0.229-0.606-0.222-0.836,0.009l-3.604,3.689L6.35,5.772C6.115,5.543,5.744,5.55,5.514,5.781C5.285,6.015,5.29,6.39,5.522,6.617L9.634,10.633z"></path>
+      <path fill="white" d="M17.737,9.815c-0.327,0-0.592,0.265-0.592,0.591v2.903H2.855v-2.903c0-0.327-0.264-0.591-0.591-0.591c-0.327,0-0.591,0.265-0.591,0.591V13.9c0,0.328,0.264,0.592,0.591,0.592h15.473c0.327,0,0.591-0.264,0.591-0.592v-3.494C18.328,10.08,18.064,9.815,17.737,9.815z"></path>
+    </svg>
+    Todo</button>
+    </div>
+    
+  <div id="todo-modal" class="modal">
+    <div class="modal-content">
+      <h2>Todo List</h2>
+      <ul id="todo-list"></ul>
+      <form>
+        <input type="text" id="todo-input" placeholder="Add a new todo">
+        <button type="button" id="add-todo-btn">Add</button>
+      </form>
+      <button type="button" id="close-todo-modal">Close</button>
+    </div>
+  </div>
+  
+  </div>
+
+  </footer>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
